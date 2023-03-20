@@ -1,8 +1,10 @@
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 const button = document.getElementById("button"); 
-
+const pocet = document.getElementById("pocet");
 var sound = new Audio("/res/mp3/osu1.mp3");
+let score = 0
+
 
 button.onclick= () => {
   sound.play();
@@ -20,6 +22,7 @@ button.onclick= () => {
     DrawCircle(){
       setTimeout(() => {
         
+       
         const circle = {
           x: canvas.width / this.xx,
           y: canvas.height / this.yy,
@@ -31,17 +34,19 @@ button.onclick= () => {
             ctx.fillStyle = this.color;
             ctx.fill();
             ctx.closePath();
+            
            
           },
-  
+          
        
           clicked: function(mouseX, mouseY) {
               const distance = Math.sqrt((mouseX - this.x) ** 2 + (mouseY - this.y) ** 2);
               return distance < this.radius;
+              
             
             }
           };
-        
+          
           let ifActive = true; 
             
           canvas.addEventListener("click", function(event) {
@@ -53,7 +58,8 @@ button.onclick= () => {
             if (circle.clicked(mouseX, mouseY) && ifActive == true) {
               ctx.clearRect(0, 0, canvas.width, canvas.height); 
                   ifActive = false;
-         
+                  score ++;
+                  pocet.innerHTML = score
             } 
         
           });
