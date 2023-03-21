@@ -2,6 +2,8 @@ const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 const button = document.getElementById("button"); 
 const pocet = document.getElementById("pocet");
+const tabulka = document.getElementById("tabulka"); 
+const button2 = document.getElementById("button2");
 var sound = new Audio("/res/mp3/osu1.mp3");
 let score = 0
 
@@ -78,6 +80,7 @@ button.onclick= () => {
   }
 
 
+
   let circle1 = new Circle (3.5,4.3,800,0)
   circle1.DrawCircle()
   let circle2 = new Circle (2,3.9,800,1400)
@@ -106,13 +109,13 @@ button.onclick= () => {
   circle13.DrawCircle()
   let circle14 = new Circle (2,3.9,800,13400)
   circle14.DrawCircle()
-  let circle15 = new Circle (2,1.3,800,14400)
+  let circle15 = new Circle (3.5,2.3,800,14400)
   circle15.DrawCircle()
   let circle16 = new Circle (2,1.3,800,15400)
   circle16.DrawCircle()
-  let circle17 = new Circle (2,1.3,800,16400)
+  let circle17 = new Circle (1.5,2.3,800,16400)
   circle17.DrawCircle()
-  let circle18 = new Circle (2,1.3,800,17400)
+  let circle18 = new Circle (3.5,4,800,17400)
   circle18.DrawCircle()
   let circle19 = new Circle (3.5,4.3,800,18400)
   circle19.DrawCircle()
@@ -144,9 +147,9 @@ button.onclick= () => {
   circle32.DrawCircle()
   let circle33 = new Circle (2,1.3,800,32400)
   circle33.DrawCircle()
-  let circle34 = new Circle (2,1.3,800,33400)
+  let circle34 = new Circle (2,3.9,800,33400)
   circle34.DrawCircle()
-  let circle35 = new Circle (2,1.3,800,34400)
+  let circle35 = new Circle (3.5,2.3,800,34400)
   circle35.DrawCircle()
   let circle36 = new Circle (2,1.3,800,35400)
   circle36.DrawCircle()
@@ -160,9 +163,9 @@ button.onclick= () => {
   circle40.DrawCircle()
   let circle41 = new Circle (2,1.3,800,40400)
   circle41.DrawCircle()
-  let circle42 = new Circle (2,1.3,800,41400)
+  let circle42 = new Circle (3.5,2.3,800,41400)
   circle42.DrawCircle()
-  let circle43 = new Circle (2,1.3,800,42400)
+  let circle43 = new Circle (3.5,4,800,42400)
   circle43.DrawCircle()
   let circle44 = new Circle (2,1.3,800,43400)
   circle44.DrawCircle()
@@ -194,13 +197,13 @@ button.onclick= () => {
   circle57.DrawCircle()
   let circle58 = new Circle (2,3.9,800,57400)
   circle58.DrawCircle()
-  let circle59 = new Circle (2,1.3,800,58400)
+  let circle59 = new Circle (3.8,3.2,800,58400)
   circle59.DrawCircle()
   let circle60 = new Circle (2,1.3,800,59400)
   circle60.DrawCircle()
-  let circle61 = new Circle (2,1.3,800,60400)
+  let circle61 = new Circle (2.4,3.3,800,60400)
   circle61.DrawCircle()
-  let circle62 = new Circle (2,1.3,800,61400)
+  let circle62 = new Circle (1.6,1.5,800,61400)
   circle62.DrawCircle()
   let circle63 = new Circle (3.2,3.7,800,62400)
   circle63.DrawCircle()
@@ -214,13 +217,13 @@ button.onclick= () => {
   circle67.DrawCircle()
   let circle68 = new Circle (2,3.9,800,67400)
   circle68.DrawCircle()
-  let circle69 = new Circle (2,1.3,800,68400)
+  let circle69 = new Circle (2.4,3.3,800,68400)
   circle69.DrawCircle()
   let circle70 = new Circle (2,1.3,800,69400)
   circle70.DrawCircle()
-  let circle71 = new Circle (2,1.3,800,70400)
+  let circle71 = new Circle (2.9,1.8,800,70400)
   circle71.DrawCircle()
-  let circle72 = new Circle (2,1.3,800,71400)
+  let circle72 = new Circle (3.8,3.2,800,71400)
   circle72.DrawCircle()
   let circle73 = new Circle (3.2,3.7,800,72400)
   circle73.DrawCircle()
@@ -234,7 +237,17 @@ button.onclick= () => {
   circle77.DrawCircle()
  
   
+  setTimeout(function() {
+
+    
+    tabulka.style.backgroundColor = 'gray';
   
-
-
-}
+   
+    tabulka.innerHTML = `Skóre ${score}`;
+    button2.textContent = 'hrát znovu';
+    button2.addEventListener('click', function() {
+      location.reload(); 
+    });
+    tabulka.appendChild(button2);
+    document.body.appendChild(tabulka);
+  }, 77400); }

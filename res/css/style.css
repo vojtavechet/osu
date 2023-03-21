@@ -1,3 +1,11 @@
+body{
+    background-image: url("/res/img/pozadi.png");
+    background-repeat: no-repeat;
+    background-position:right;
+    background-attachment: fixed;
+    background-size: cover;
+ }
+
 #button{
 position: absolute;
 cursor: pointer;
@@ -10,8 +18,17 @@ font-size: 40px;
 #pocet{
     position: absolute;
     cursor: pointer;
-   
     margin-left: 900px;
-   
     font-size: 40px;
     }
+    #tabulka{
+       
+        position: absolute;
+        cursor: pointer;
+        margin-top: -470px;
+        margin-left: 800px;
+       
+        padding: 50px;
+        font-size: 40px;
+        }
+    
